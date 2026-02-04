@@ -1,16 +1,152 @@
-# React + Vite
+# HRMS – Human Resource Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Human Resource Management System (HRMS) built using Django REST Framework and React. This project is production-ready, fully deployed, and documented using Swagger (OpenAPI).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+* **Frontend:** [https://frontend-hrms-omega.vercel.app/](https://frontend-hrms-omega.vercel.app/)
+* **Backend (Swagger API):** [https://backend-hrms-umwx.onrender.com/swagger-ui/](https://backend-hrms-umwx.onrender.com/swagger-ui/)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 📂 Source Code
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend GitHub:** [https://github.com/sohailk007/frontend-hrms](https://github.com/sohailk007/frontend-hrms)
+* **Backend GitHub:** [https://github.com/sohailk007/backend-hrms](https://github.com/sohailk007/backend-hrms)
+
+---
+
+## 🛠 Tech Stack
+
+### Backend
+
+* Django
+* Django REST Framework (DRF)
+* PostgreSQL
+* drf-spectacular (Swagger / OpenAPI)
+
+### Frontend
+
+* React (Vite)
+* Axios
+* Tailwind CSS (if used)
+
+### Deployment
+
+* Backend: Render
+* Frontend: Vercel
+
+---
+
+## ✨ Features
+
+* Employee management (Create, Read, Update, Delete)
+* Attendance marking and tracking
+* Attendance summaries per employee
+* Dashboard analytics (total employees, attendance records, present count)
+* RESTful APIs with full Swagger documentation
+* Environment-based configuration using `.env`
+
+---
+
+## 🔗 API Endpoints Overview
+
+### Employee
+
+* `GET /api/v1/employees/` – List employees
+* `POST /api/v1/employees/` – Create employee
+* `DELETE /api/v1/employees/{id}/` – Delete employee
+
+### Attendance
+
+* `POST /api/v1/attendance/create/` – Mark attendance
+* `GET /api/v1/attendance/list/` – List attendance records (filter by employee_id, date)
+
+### Summary
+
+* `GET /api/v1/attendance/summary/` – Attendance summary per employee
+* `GET /api/v1/dashboard/summary/` – Dashboard statistics
+
+(For full API details, refer to Swagger UI.)
+
+---
+
+## ⚙️ Backend Setup
+
+```bash
+git clone https://github.com/sohailk007/backend-hrms.git
+cd backend-hrms
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+Create a `.env` file:
+
+```env
+DEBUG=True
+SECRET_KEY=your_secret_key
+DATABASE_URL=postgres://user:password@localhost:5432/hrms_db
+```
+
+---
+
+## ⚙️ Frontend Setup
+
+```bash
+git clone https://github.com/sohailk007/frontend-hrms.git
+cd frontend-hrms
+npm install
+npm run dev
+```
+
+Create a `.env` file:
+
+```env
+VITE_BASE_URL=http://localhost:8000/api/v1
+```
+
+---
+
+## 📄 Documentation
+
+Swagger API documentation is available at:
+
+👉 [https://backend-hrms-umwx.onrender.com/swagger-ui/](https://backend-hrms-umwx.onrender.com/swagger-ui/)
+
+---
+
+## 🧪 Testing
+
+* APIs can be tested directly via Swagger UI.
+* Frontend uses Axios for API communication.
+
+---
+
+## 📈 Future Enhancements
+
+* User authentication & role-based access control
+* Pagination, filtering, and search
+* Export reports (PDF/Excel)
+* Notification system
+* Audit logs
+
+---
+
+## 👤 Author
+
+Md Sohail Ali
+Full Stack Python Developer
+GitHub: [https://github.com/sohailk007](https://github.com/sohailk007)
+LinkedIn: [https://linkedin.com/in/md-sohail](https://linkedin.com/in/md-sohail)
+
+---
+
+## 📜 License
+
+This project is open-source and available under the MIT License.
