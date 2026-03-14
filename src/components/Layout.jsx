@@ -2,9 +2,14 @@ import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="app-shell">
       <Navbar />
-      <main className="max-w-7xl mx-auto px-6 py-8">{children}</main>
+      <main className="main-content">
+        {children}
+      </main>
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} HRMS Lite — All rights reserved</p>
+      </footer>
     </div>
   );
 };
